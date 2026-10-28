@@ -1,0 +1,12 @@
+-- Write your query below
+
+
+select
+    e.employee_id,
+    case
+        when employee_id % 2 = 1 and name not like 'M%'
+            then e.salary
+        else 0
+    end as bonus
+from employees e
+order by e.employee_id 
